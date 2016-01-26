@@ -5,7 +5,7 @@ class CreateStuds < ActiveRecord::Migration
         t.string :lastname
         t.string :class_name
         t.string :hobby
-        add_reference  :users, index: true, foreign_key: true
+        add_reference  :user, index: true, foreign_key: true
         t.timestamps null: false
     end
   end
