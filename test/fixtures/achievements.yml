@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  index: MyString
+  show: MyString
+  achievment_date: 2016-01-25
+  description: MyString
+  title: MyString
+
+two:
+  index: MyString
+  show: MyString
+  achievment_date: 2016-01-25
+  description: MyString
+  title: MyString

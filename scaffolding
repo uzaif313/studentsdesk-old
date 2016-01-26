@@ -1,0 +1,1 @@
+rails g scaffold Grades subject:string grade:string examdate:date stud:references

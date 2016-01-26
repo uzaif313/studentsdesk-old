@@ -1,0 +1,45 @@
+<div class="row" ng-controller="studentControl">
+  <div class="col-md-3" >
+    <form class="form" name="gradeForm" ng-submit="addGrade(newGrade)"  method="post">
+
+        <div class="alert alert-danger" ng-show="errors!=null" >
+          <p ng-repeat="val in errors">
+            {{$index+1}}. {{val}}
+          </p>
+        </div>
+      <div class="form-group"  >
+        <label for="">Subject</label>
+        <input type="text" class="form-control"  ng-model="newGrade.subject" name="subject" value="" >
+         <span class="help-text" >Subject Required.</span>
+      </div>
+      <div class="form-group">
+        <label for="">Grade</label>
+        <input type="text" class="form-control"  ng-model="newGrade.grade" name="grade" value="" >
+      </div>
+      <div class="form-group">
+        <label for="">Examdate</label>
+        <input type="date" class="form-control"  ng-model="newGrade.examdate" name="examdate" value="" >
+      </div>
+      <div class="form-group">
+        <input type="submit" class="form-control btn btn-success" value="Save" >
+      </div>
+    </form>
+
+  </div>
+
+  <div class="col-md-9">
+    <div flash-message="5000"></div>
+    <ul>
+      <li class="list-group-item" ng-repeat="grade in grades">
+        <p class="list-heading">Id:{{grade.id}}</p>
+        <p class="list-heading">Subject:{{grade.subject}}</p>
+        <p class="list-heading">Grade:{{grade.grade}}</p>
+        <p> Exam Date :{{grade.examdate|date}}</p>
+        <div>
+            <button type="button" class="btn btn-danger" ng-model="grade" ng-click="deleteGrade(grade)">Delete</button>
+            <button type="button" class="btn btn-info" ng-click="updateGrade(grade)">Update</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

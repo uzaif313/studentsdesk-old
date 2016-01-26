@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  subject: MyString
+  grade: MyString
+  examdate: 2016-01-21
+  stud_id: 
+
+two:
+  subject: MyString
+  grade: MyString
+  examdate: 2016-01-21
+  stud_id: 
