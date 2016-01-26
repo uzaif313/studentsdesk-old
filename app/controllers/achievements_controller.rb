@@ -23,8 +23,11 @@ class AchievementsController < ApplicationController
 
   def update
     @achievement=Achievement.find_by(id:params[:id])
-    @achievement.update_attributes(achievement_params)
-    index
+    if @achievement.errors.any?
+      render json:@achievement.errors.to_a ,status: :not_found
+    else
+        index
+    end
   end
 
   private

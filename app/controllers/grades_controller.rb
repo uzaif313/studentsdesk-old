@@ -36,7 +36,11 @@ class GradesController < ApplicationController
       @grade=Grade.find(params[:grade][:id])
       # params[:grade][:stud_id]=Stud.find_by(:user_id=>current_student.id).id
       @grade.update_attributes(grade_params)
-      index
+      if @grade.errors.any?
+        render json:@grade.errors.to_a ,status: :not_found
+      else
+        index
+      end
   end
 
   def destroy
