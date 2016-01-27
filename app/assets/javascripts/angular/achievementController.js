@@ -48,7 +48,7 @@ studentApp.controller("achievementController",["$scope","$http","Flash",function
       $http.delete("students/achievements/"+achievement.id)
             .then(function(response){
               $scope.achievements=response.data
-              var message = '<strong>Deleted !</strong> Your Grade is successfully Deleted.';
+              var message = '<strong>Deleted !</strong> Your Deleted is successfully Deleted.';
               Flash.create('danger', message);
         })
     }

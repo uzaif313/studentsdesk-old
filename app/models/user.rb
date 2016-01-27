@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_one :stud
-  validates :username,presence: true,length:{minimum:5},uniqueness:true
+  validates :username,presence: true,length:{minimum:5},uniqueness:{case_sensitive: true}
   validates :email,presence: true,uniqueness:true
   validates :password,presence: true
   validates :usertype,presence: true
