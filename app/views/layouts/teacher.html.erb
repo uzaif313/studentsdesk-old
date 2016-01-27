@@ -66,10 +66,17 @@
           <%= yield %>
       </div><!--/row-->
 
-      <footer>
-        <p>&copy; Company 2016</p>
-      </footer>
 
+      <footer class="navbar-inverse navbar-fixed-bottom" style="padding-top:1%">
+        <div class="container">
+          <div class="col-md-6">
+            <p class="text-muted text-left"><a href="<%= root_url%>" style="text-decoration:none">Student's Desk</a></p>
+          </div>
+          <div class="col-md-6">
+            <p class="text-muted text-center">&copy;2016</p>
+          </div>
+        </div>
+      </footer>
     </div> <!-- /container -->
 
   </body>
