@@ -6,6 +6,6 @@
 
 ## [Admin Section](http://studentsdesk.herokuapp.com/admin)
 
-## [Teacher Section](https://www.studentsdesk.heroku.com/teachers)
+## [Teacher Section](https://www.studentsdesk.herokuapp.com/teachers)
 
 ## [Student Section](http://studentsdesk.herokuapp.com/)
