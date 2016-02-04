@@ -2,9 +2,6 @@
 ![Students Desk](http://studentsdesk.herokuapp.com//images/logo2.png) 
 </center>
 
-<center>
-![Rails](https://www.codementor.io/assets/topic/category_header/ruby-on-rails.png)![AngularJS](https://cdn.codementor.io/assets/topic/category_header/angularjs.png)
-</center>
 # Students Desk Demo Application
 
 ## [Admin Section](http://studentsdesk.herokuapp.com/admin)
