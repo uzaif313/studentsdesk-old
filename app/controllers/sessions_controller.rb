@@ -14,13 +14,7 @@ class SessionsController < Devise::SessionsController
             redirect_to root_url
         end
     end
-    def after_sign_in_path_for(resource)
-      if resource.usertype == "teacher"
-        return  teachers_url
-      elsif resource.usertype == "student"
-        return students_url
-      end
-    end
+
 
     def after_sign_out_path_for(resource)
         if resource == :student

@@ -60,11 +60,11 @@
             <% if student_signed_in? %>
              <li><a href="/students/edit"><%=current_student.username%></a><																																																								/li>
              <li><%= link_to('sign out', destroy_student_session_path) %></li>
+             <li><a href="/students">Assets</a></li>
             <%else%>
               <li><a href="/students/sign_in">Sign in</a></li>
               <li><a href="/students/sign_up">Sign up</a></li>
             <%end%>
-   	      <li><a href="#">Contact</a></li>
     	</ul>
     	 </div>
     	 <div class="clear"></div>
