@@ -1,7 +1,5 @@
   Rails.application.routes.draw do
-
-
-
+  root "home#index"
 
   # devise_for :teachers
   scope "/students" do
@@ -19,23 +17,14 @@
   get "/teachers" => "teachers#index"
   get "/students/edit-detail" => "students#edit_detail"
   post"/students/edit-detail" => "students#update"
-  root "home#index"
-  # resources :students
-  #  devise_scope :students do
-  #       get "students/register" => "registration#register"
-  #  end
-    # devise_scope :students do
-  #   get "/signup" => "students/registrations#new", :as => :new_user_registration
-  # end
-  # resources :students
-    devise_for :students, :controllers => { :sessions => "sessions" ,:registrations =>"registrations"}
-    devise_for :teachers, :controllers => { :sessions => "sessions" ,:registrations =>"registrations"}
+  devise_for :students, :controllers => { :sessions => "sessions" ,:registrations =>"registrations"}
+  devise_for :teachers, :controllers => { :sessions => "sessions" ,:registrations =>"registrations"}
 
   #  devise_for :students, :controllers: { sessions: "students/essions", registrations: "students/registrations" }, path_names: { sign_in: 'login', password: 'forgot', confirmation: 'confirm', unlock: 'unblock', sign_up: 'register', sign_out: 'signout'}
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  get 'teachers/index'
+  # get 'teachers/index'
   #
   # get 'teachers/show'
   #
@@ -44,9 +33,6 @@
 
 
 
-  # devise_for :faculty
-  #  devise_for :teachers, controllers: {registrations: 'teacher/registrations' }
-  # devise_for :teachers, view: {sign_in: 'teacher/si' }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
