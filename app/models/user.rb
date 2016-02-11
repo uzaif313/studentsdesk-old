@@ -6,7 +6,6 @@ class User < ActiveRecord::Base
   has_one :stud
   validates :username,presence: true,length:{minimum:5},uniqueness:{case_sensitive: true}
   validates :email,presence: true,uniqueness:true
-  validates :password,presence: true
   validates :usertype,presence: true
   # self.abstract_class = true
 

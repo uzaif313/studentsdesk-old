@@ -1,9 +1,9 @@
 class SessionsController < Devise::SessionsController
     def create
-      type=params.keys[2]
-        @user = User.find_by_email(params[type][:email])
+      role=params.keys[2]
+        @user = User.find_by_email(params[role][:email])
         if @user != nil
-          if !@user || @user.usertype!=type
+          if !@user || @user.usertype!=role
             flash[:danger] = " Access denied."
               redirect_to root_url
           else
