@@ -1,3 +1,4 @@
 class Achievement < ActiveRecord::Base
-  validates :title,:description,:achievment_date,presence:true
+	belongs_to :stud
+	validates :title,:description,:achievment_date,presence:true
 end

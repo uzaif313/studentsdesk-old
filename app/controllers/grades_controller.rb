@@ -6,8 +6,7 @@ class GradesController < ApplicationController
 
   before_action :authenticate_student!
   def index
-    stud_id=Stud.find_by(:user_id=>current_student.id).id
-    @grades=Grade.where(:stud_id=>stud_id)
+    @grades=current_student.stud.grades
     render json: @grades
   end
 
@@ -16,10 +15,7 @@ class GradesController < ApplicationController
   end
 
   def create
-        # raise params.inspect
-
-        params[:grade][:stud_id]=Stud.find_by(:user_id=>current_student.id).id
-        @grade=Grade.create(grade_params)
+        @grade=current_student.stud.grades.create(grade_params)
         if @grade.errors.any?
             render json:@grade.errors.to_a ,status: :not_found
         else
@@ -28,13 +24,10 @@ class GradesController < ApplicationController
   end
 
   def show
-
   end
 
   def update
-      # raise params.inspect
       @grade=Grade.find(params[:grade][:id])
-      # params[:grade][:stud_id]=Stud.find_by(:user_id=>current_student.id).id
       @grade.update_attributes(grade_params)
       if @grade.errors.any?
         render json:@grade.errors.to_a ,status: :not_found
@@ -51,7 +44,6 @@ class GradesController < ApplicationController
 
 private
   def grade_params
-     params.require(:grade).permit(:subject, :grade,:examdate,:stud_id)
-    # params.require(:newData).permit(:subject,:grade,:examdate,:stud_id)
+     params.require(:grade).permit(:subject, :grade,:examdate)
   end
 end

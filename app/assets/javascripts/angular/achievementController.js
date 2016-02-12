@@ -13,6 +13,7 @@ studentApp.controller("achievementController",["$scope","$http","Flash",function
 
           $http.put("students/achievements/"+achievement.id,{achievement})
                .then(function(response){
+                 console.log(response.data)
                  $scope.achievements=response.data
                  var message = '<strong>Updated !</strong> Your Achievement is successfully Updated.';
                  Flash.create('success', message);
