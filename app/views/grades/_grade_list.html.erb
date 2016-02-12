@@ -1,0 +1,12 @@
+<ul>
+  <li class="list-group-item" ng-repeat="grade in grades">
+    <p class="list-heading">Id:{{grade.id}}</p>
+    <p class="list-heading">Subject:{{grade.subject}}</p>
+    <p class="list-heading">Grade:{{grade.grade}}</p>
+    <p> Exam Date :{{grade.examdate|date}}</p>
+    <div>
+        <button type="button" class="btn btn-danger" ng-model="grade" ng-click="deleteGrade(grade)">Delete</button>
+        <button type="button" class="btn btn-info" ng-click="updateGrade(grade)">Update</button>
+    </div>
+  </li>
+</ul>
