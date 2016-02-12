@@ -1,19 +1,17 @@
 class AchievementsController < ApplicationController
   before_action :authenticate_student!
   def index
-    @achievements=Achievement.where(:stud_id=>Stud.find_by(:user_id=>current_student.id).id)
+    @achievements=current_student.stud.achievements
     render json:@achievements
   end
 
   def create
-    params[:achievement][:stud_id]=Stud.find_by(:user_id=>current_student.id).id
-    @achievement=Achievement.create(achievement_params)
+    @achievement=current_student.stud.achievements.create(achievement_params)
     if @achievement.errors.any?
       render json:@achievement.errors.to_a ,status: :not_found
     else
         index
     end
-    # raise params.inspect
   end
 
   def destroy
@@ -23,6 +21,7 @@ class AchievementsController < ApplicationController
 
   def update
     @achievement=Achievement.find_by(id:params[:id])
+    @achievement.update_attributes(achievement_params)
     if @achievement.errors.any?
       render json:@achievement.errors.to_a ,status: :not_found
     else
@@ -32,6 +31,6 @@ class AchievementsController < ApplicationController
 
   private
     def achievement_params
-      params.require(:achievement).permit(:title,:description,:achievment_date,:stud_id)
+      params.require(:achievement).permit(:title,:description,:achievment_date)
     end
 end

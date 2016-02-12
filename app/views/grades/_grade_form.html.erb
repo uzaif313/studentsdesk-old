@@ -1,0 +1,23 @@
+<form class="form" name="gradeForm" ng-submit="addGrade(newGrade)"  method="post">
+
+    <div class="alert alert-danger" ng-show="errors!=null" >
+      <p ng-repeat="val in errors">
+        {{$index+1}}. {{val}}
+      </p>
+    </div>
+  <div class="form-group"  >
+    <label for="">Subject</label>
+    <input type="text" class="form-control"  ng-model="newGrade.subject" name="subject" value="" >
+  </div>
+  <div class="form-group">
+    <label for="">Grade</label>
+    <input type="text" class="form-control"  ng-model="newGrade.grade" name="grade" value="" >
+  </div>
+  <div class="form-group">
+    <label for="">Examdate</label>
+    <input type="date" class="form-control"  ng-model="newGrade.examdate" name="examdate" value="" >
+  </div>
+  <div class="form-group">
+    <input type="submit" class="form-control btn btn-success" value="Save" >
+  </div>
+</form>

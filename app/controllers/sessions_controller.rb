@@ -1,9 +1,9 @@
 class SessionsController < Devise::SessionsController
     def create
-      type=params.keys[2]
-        @user = User.find_by_email(params[type][:email])
+      role=params.keys[2]
+        @user = User.find_by_email(params[role][:email])
         if @user != nil
-          if !@user || @user.usertype!=type
+          if !@user || @user.usertype!=role
             flash[:danger] = " Access denied."
               redirect_to root_url
           else
@@ -14,13 +14,7 @@ class SessionsController < Devise::SessionsController
             redirect_to root_url
         end
     end
-    def after_sign_in_path_for(resource)
-      if resource.usertype == "teacher"
-        return  teachers_url
-      elsif resource.usertype == "student"
-        return students_url
-      end
-    end
+
 
     def after_sign_out_path_for(resource)
         if resource == :student

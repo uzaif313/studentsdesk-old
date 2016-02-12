@@ -1,0 +1,15 @@
+<ul class="list-group">
+    <li class="list-group-item" ng-repeat="achievement in achievements">
+        <h4 class="list-group-item-heading">
+          {{achievement.title}}
+        </h4>
+        <p class="list-group-item-text">
+          {{achievement.description}}
+        </p>
+        <p>
+            {{achievement.achievment_date|date}}
+        </p>
+        <button type="button" class="btn btn-info" ng-click="updateAchievement(achievement)">Update</button>
+        <button type="button" class="btn btn-danger" ng-click="deleteAchievement(achievement)">Delete</button>
+    </li>
+</ul>

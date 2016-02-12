@@ -1,12 +1,12 @@
 <div class="row" ng-app="teacherApp" ng-controller="teacherController">
 
-  <div class="col-md-8">
+  <div class="col-md-8" >
   <ul class="nav nav-tabs" role="tablist">
    <li role="presentation"  class="active"><a href="#grades" aria-controls="grades" role="tab" data-toggle="tab" aria-expanded="true">Grades</a></li>
    <li role="presentation" ><a href="#achievements" aria-controls="achievements" role="tab" data-toggle="tab">Achievements</a></li>
  </ul>
-<div class="tab-content">
-  <div role="tabpanel"   class="tab-pane fade active" id="grades">
+<div class="tab-content" >
+  <div role="tabpanel"   class="tab-pane fade in active" id="grades">
     <ul class="list-group">
       <li class="list-group-item" ng-repeat="grade in grades">
         <h4 class="list-group-item-heading"><b>Subject</b> : {{grade.subject}}</h4>

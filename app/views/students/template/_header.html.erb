@@ -1,0 +1,23 @@
+<div class="header-bg">
+<div class="wrap">
+  <div class="header">
+    <div class="logo">
+          <a href="<%=root_url%>"><img src="/images/logo1.png"> </a>
+     </div>
+    <div class="menu">
+  <ul class='kwicks kwicks-horizontal'>
+      <li><a href="<%=root_url%>">Home</a></li>
+        <% if student_signed_in? %>
+         <li><a href="/students/edit"><%=current_student.username%></a><																																																								/li>
+         <li><%= link_to('sign out', destroy_student_session_path) %></li>
+         <li><a href="/students">Assets</a></li>
+        <%else%>
+          <li><a href="/students/sign_in">Sign in</a></li>
+          <li><a href="/students/sign_up">Sign up</a></li>
+        <%end%>
+  </ul>
+   </div>
+   <div class="clear"></div>
+  </div>
+</div>
+</div>

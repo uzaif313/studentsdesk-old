@@ -8,7 +8,6 @@ class StudentsController < ApplicationController
   end
 
   def edit_detail
-    # @stud=Stud.where(:user_id=>current_student.id)
     @stud=current_student.stud
     render "editdetail"
   end

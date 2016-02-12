@@ -10,8 +10,10 @@ teacherApp.controller("teacherController",["$scope","$http",function($scope,$htt
            .then(function(response){
              $scope.grades=response.data
            })
+           
       $http.get("/teachers/achievements/"+id)
                  .then(function(response){
+                  //  console.log(response.data)
                    $scope.achievements=response.data
        })
 
