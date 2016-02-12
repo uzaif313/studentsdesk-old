@@ -1,7 +1,5 @@
 <center>
 ![IMAGE ALT TEXT HERE](http://studentsdesk.herokuapp.com//images/logo2.png)
-=======
-![Students Desk](http://studentsdesk.herokuapp.com//images/logo2.png)
 </center>
 
 # Students Desk Demo Application
