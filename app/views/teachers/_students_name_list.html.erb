@@ -1,0 +1,16 @@
+<div class="panel panel-primary">
+      <div class="panel-heading">
+        Students
+      </div>
+      <div class="panel-body" >
+        <ul class="list-group">
+          <% if !@students.blank? %>
+            <% for @user in @students %>
+              <li class="list-group-item"  ng-class="{active: id===<%=@user.id%>}" ng-click="getDetail(<%=@user.id%>)" >
+                <%= @user.firstname+" "+@user.lastname %>
+              </li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+    </div>

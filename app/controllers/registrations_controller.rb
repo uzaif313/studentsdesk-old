@@ -32,6 +32,18 @@ class RegistrationsController < Devise::RegistrationsController
 
   end
 
+   def after_update_path_for(resource)
+      if resource.usertype == "student"
+
+        return students_url
+
+        elsif resource.usertype == "teacher"
+          
+        return teachers_url        
+      end
+
+   end
+
   # def stud_params id
   #   params[:student][:user_id]=id
   #   params[:student].require(:stud).permit(:class_name,:hobby,:user_id,:firstname,:lastm)

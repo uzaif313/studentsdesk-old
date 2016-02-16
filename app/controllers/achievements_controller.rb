@@ -1,5 +1,6 @@
 class AchievementsController < ApplicationController
   before_action :authenticate_student!
+  layout false
   def index
     @achievements=current_student.stud.achievements
     render json:@achievements

@@ -1,0 +1,25 @@
+<ul class="nav nav-tabs" role="tablist">
+     <li role="presentation"  class="active"><a href="#grades" aria-controls="grades" role="tab" data-toggle="tab" aria-expanded="true">Grades</a></li>
+     <li role="presentation" ><a href="#achievements" aria-controls="achievements" role="tab" data-toggle="tab">Achievements</a></li>
+   </ul>
+<div class="tab-content" >
+  <div role="tabpanel"   class="tab-pane fade in active" id="grades">
+    <ul class="list-group">
+      <li class="list-group-item" ng-repeat="grade in grades">
+        <h4 class="list-group-item-heading"><b>Subject</b> : {{grade.subject}}</h4>
+        <p class="list-group-item-text"><b>Grade</b> : {{grade.grade}}</p>
+        <p class="list-group-item-text text-muted"><b>Exam Date</b> :{{grade.examdate|date}}</p>
+      </li>
+    </ul>
+  </div>
+
+  <div role="tabpanel" class="tab-pane fade" id="achievements">
+    <ul class="list-group">
+      <li class="list-group-item" ng-repeat="achievement in achievements">
+        <h4 class="list-group-item-heading"><b>Title</b> : {{achievement.title}}</h4>
+        <p class="list-group-item-text"><b>Description</b> : {{achievement.description}}</p>
+        <p class="list-group-item-text text-muted"><b>Date</b> :{{achievement.achievment_date|date}}</p>
+      </li>
+    </ul>
+    </div>
+</div>
