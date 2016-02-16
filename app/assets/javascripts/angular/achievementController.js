@@ -3,17 +3,17 @@ studentApp.controller("achievementController",["$scope","$http","Flash",function
     $scope.newAchievement={}
     $scope.achievements={}
     $scope.errors=null
-    $http.get("students/achievements")
+    $http.get("achievements")
          .then(function(response){
-            console.log(response.data)
+            // console.log(response.data)
             $scope.achievements=response.data
     })
     $scope.addAchievement=function(achievement){
       if (achievement.id!=undefined) {
 
-          $http.put("students/achievements/"+achievement.id,{achievement})
+          $http.put("achievements/"+achievement.id,{achievement})
                .then(function(response){
-                 console.log(response.data)
+                 // console.log(response.data)
                  $scope.achievements=response.data
                  var message = '<strong>Updated !</strong> Your Achievement is successfully Updated.';
                  Flash.create('success', message);
@@ -28,7 +28,7 @@ studentApp.controller("achievementController",["$scope","$http","Flash",function
 
       } else {
 
-          $http.post("students/achievements/",{achievement})
+          $http.post("achievements/",{achievement})
           .then(function(response){
             $scope.achievements=response.data
             var message = '<strong>Saved !</strong> Your Achievement is successfully Saved.';
@@ -46,7 +46,7 @@ studentApp.controller("achievementController",["$scope","$http","Flash",function
     }
 
     $scope.deleteAchievement=function(achievement){
-      $http.delete("students/achievements/"+achievement.id)
+      $http.delete("achievements/"+achievement.id)
             .then(function(response){
               $scope.achievements=response.data
               var message = '<strong>Deleted !</strong> Your Deleted is successfully Deleted.';
