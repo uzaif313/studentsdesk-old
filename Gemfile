@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+ruby "2.2.4" 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use sqlite3 as the database for Active Record
@@ -39,7 +39,8 @@ gem "twitter-bootstrap-rails"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+   gem 'byebug'
+   gem 'railroady'
 end
 group :production do
   gem 'pg',             '0.17.1'
