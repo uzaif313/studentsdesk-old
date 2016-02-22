@@ -30815,7 +30815,7 @@ studentApp.controller("achievementController",["$scope","$http","Flash",function
     $scope.newAchievement={}
     $scope.achievements={}
     $scope.errors=null
-    $http.get("students/achievements")
+    $http.get("achievements")
          .then(function(response){
             console.log(response.data)
             $scope.achievements=response.data
@@ -30823,7 +30823,7 @@ studentApp.controller("achievementController",["$scope","$http","Flash",function
     $scope.addAchievement=function(achievement){
       if (achievement.id!=undefined) {
 
-          $http.put("students/achievements/"+achievement.id,{achievement})
+          $http.put("achievements/"+achievement.id,{achievement})
                .then(function(response){
                  $scope.achievements=response.data
                  var message = '<strong>Updated !</strong> Your Achievement is successfully Updated.';
@@ -30839,7 +30839,7 @@ studentApp.controller("achievementController",["$scope","$http","Flash",function
 
       } else {
 
-          $http.post("students/achievements/",{achievement})
+          $http.post("achievements/",{achievement})
           .then(function(response){
             $scope.achievements=response.data
             var message = '<strong>Saved !</strong> Your Achievement is successfully Saved.';
@@ -30857,7 +30857,7 @@ studentApp.controller("achievementController",["$scope","$http","Flash",function
     }
 
     $scope.deleteAchievement=function(achievement){
-      $http.delete("students/achievements/"+achievement.id)
+      $http.delete("achievements/"+achievement.id)
             .then(function(response){
               $scope.achievements=response.data
               var message = '<strong>Deleted !</strong> Your Grade is successfully Deleted.';
@@ -30875,13 +30875,13 @@ studentApp.controller("studentControl",["$scope","$http","Flash",function($scope
   $scope.grade={}
   $scope.errors=null
   $scope.newGrade={}
-        $http.get("students/grades")
+        $http.get("grades")
              .then(function(response){
                 $scope.grades=response.data
   })
 
   $scope.deleteGrade=function(data){
-    $http.delete("students/grades/"+data.id)
+    $http.delete("grades/"+data.id)
          .then(function(response){
                 $scope.grades=response.data
                 var message = '<strong>Deleted !</strong> Your Grade is successfully Deleted.';
@@ -30891,8 +30891,7 @@ studentApp.controller("studentControl",["$scope","$http","Flash",function($scope
 
   $scope.addGrade=function(grade){
     if (grade.id!=undefined){
-      console.log(grade)
-        $http.put("students/grades/"+grade.id,{grade})
+        $http.put("grades/"+grade.id,{grade})
            .then(function(response){
              $scope.grades=response.data
              var message = '<strong>Updated !</strong> Your Grade is successfully Updated.';
@@ -30906,8 +30905,7 @@ studentApp.controller("studentControl",["$scope","$http","Flash",function($scope
            })
 
     }else {
-      console.log("in save:\n "+grade)
-      $http.post("students/grades/",{grade})
+      $http.post("grades/",{grade})
       .then(function(response){
         $scope.grades=response.data
         var message = '<strong>Saved !</strong> Your Grade is successfully Saved.';
