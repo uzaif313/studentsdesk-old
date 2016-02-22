@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "2.2.4" 
+# ruby "2.2.4" 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use sqlite3 as the database for Active Record
@@ -15,7 +15,6 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 gem 'activeadmin'
 gem 'devise'
-gem "cancan"
 gem 'bower-rails'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
