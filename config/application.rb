@@ -24,6 +24,7 @@ module School
     config.active_record.raise_in_transactional_callbacks = true
     config.assets.initialize_on_precompile = false
     config.action_controller.default_url_options = { trailing_slash: true }
+    config.assets.precompile += %w(*.js)
 
   end
 end
