@@ -1,10 +1,10 @@
 studentApp.config(function($routeProvider,$locationProvider){
   $routeProvider
    .when("/grades/",{
-     templateUrl:"/grades/index"
+     templateUrl:"students/grades/index"
    })
    .when("/achievement/",{
-     templateUrl:"/achievements/index"
+     templateUrl:"students/achievements/index"
 
    });
  //   $locationProvider.html5Mode({

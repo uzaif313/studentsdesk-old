@@ -2,9 +2,11 @@ studentApp.controller("studentControl",["$scope","$http","Flash",function($scope
   $scope.grade={}
   $scope.errors=null
   $scope.newGrade={}
-        $http.get("students/grades")
-             .then(function(response){
-                $scope.grades=response.data
+
+
+  $http.get("students/grades")
+       .then(function(response){
+        $scope.grades=response.data
   })
 
   $scope.deleteGrade=function(data){
