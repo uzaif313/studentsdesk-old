@@ -2,13 +2,13 @@ studentApp.controller("studentControl",["$scope","$http","Flash",function($scope
   $scope.grade={}
   $scope.errors=null
   $scope.newGrade={}
-        $http.get("students/grades")
+        $http.get("grades")
              .then(function(response){
                 $scope.grades=response.data
   })
 
   $scope.deleteGrade=function(data){
-    $http.delete("students/grades/"+data.id)
+    $http.delete("grades/"+data.id)
          .then(function(response){
                 $scope.grades=response.data
                 var message = '<strong>Deleted !</strong> Your Grade is successfully Deleted.';
@@ -18,7 +18,7 @@ studentApp.controller("studentControl",["$scope","$http","Flash",function($scope
 
   $scope.addGrade=function(grade){
     if (grade.id!=undefined){
-        $http.put("students/grades/"+grade.id,{grade})
+        $http.put("grades/"+grade.id,{grade})
            .then(function(response){
              $scope.grades=response.data
              var message = '<strong>Updated !</strong> Your Grade is successfully Updated.';
@@ -33,7 +33,7 @@ studentApp.controller("studentControl",["$scope","$http","Flash",function($scope
 
     }else {
      
- $http.post("students/grades/",{grade})
+ $http.post("grades/",{grade})
       .then(function(response){
         $scope.grades=response.data
         var message = '<strong>Saved !</strong> Your Grade is successfully Saved.';
