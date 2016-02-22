@@ -18,7 +18,6 @@ studentApp.controller("studentControl",["$scope","$http","Flash",function($scope
 
   $scope.addGrade=function(grade){
     if (grade.id!=undefined){
-      console.log(grade)
         $http.put("grades/"+grade.id,{grade})
            .then(function(response){
              $scope.grades=response.data
@@ -33,13 +32,12 @@ studentApp.controller("studentControl",["$scope","$http","Flash",function($scope
            })
 
     }else {
-      console.log("in save:\n "+grade)
-      $http.post("grades/",{grade})
+     
+ $http.post("grades/",{grade})
       .then(function(response){
         $scope.grades=response.data
         var message = '<strong>Saved !</strong> Your Grade is successfully Saved.';
         Flash.create('success', message);
-
         $scope.newGrade={}
         $scope.errors=null
       },function(response) {
@@ -51,7 +49,6 @@ studentApp.controller("studentControl",["$scope","$http","Flash",function($scope
   }
 
   $scope.updateGrade=function(grade){
-    // console.log(grade.id==undefined)
     grade.examdate=new Date(grade.examdate)
     $scope.newGrade=grade
   }
